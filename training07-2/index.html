@@ -6,16 +6,25 @@
     <title>引数</title>
 </head>
 <style>
-    yoyaku.{
-        color: crimson;
+    #message{
+        width: 250px;
+        padding-top: 15px;
+    }
+    #yoyaku{
+        color: red;
+        font-weight: bold;
     }
 </style>
 <body>
-    <h4>座席の予約</h4>
-    <p>東京会議</p><p class="yoyaku">（予約受付中）</p>
-    <button onclick="showAnser();">予約する</button>
-</body>
+    <h1>座席の予約</h1>
+    <p>東京会場 <nobr id="yoyaku"> <strong>（予約受付中）</strong></nobr></p>
+    <div id="message"><button onclick="showAnser();">予約する</button></div>
 <script>
-
+    function showAnser(){
+        document.getElementById('yoyaku').textContent = ' (予約済み) ';
+        let anserBox = document.getElementById('message');
+        anserBox.innerHTML = '<strong>ありがとうございました。<strong>';
+    }
 </script>
+</body>
 </html>
