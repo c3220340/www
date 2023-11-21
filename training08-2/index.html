@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>要素の追加と削除</title>
 </head>
 <body>
     <h3>写真の一覧</h3>
     <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
-    <button onclick="photo()">写真を表示</button>
+    <div id="photo">
+        <button id="saku" onclick="showphoto()">写真を表示</button>
+    </div>
+
+    <script>
+        function showphoto(){
+            let syasin = document.getElementById('photo')
+            syasin.insertAdjacentHTML('beforeend','<img src=photo1.jpeg><img src=photo2.jpeg><img src=photo3>');
+            syasin.insertAdjacentHTML('beforeend','<img src=photo4.jpeg><img src=photo5.jpeg><img src=photo6>');
+            syasin.insertAdjacentHTML('beforeend','<img src=photo7.jpeg><img src=photo8.jpeg>');
+            document.getElementById('saku').remove();
+        }
+    </script>
 </body>
 </html>
