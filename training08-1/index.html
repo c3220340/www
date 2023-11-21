@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>人口の多い国ランキング</h3>
-    <ol id="country">
+    <ol id="kuni">
        <li>中国</li>
        <li>インド</li>
        <li>アメリカ</li>
@@ -16,7 +16,13 @@
     <button onclick="showcountry()">国旗で表示</button>
 
     <script>
-    
+        let kuni = document.querySelectorAll('#kuni li');
+        function showcountry(){
+            kuni[0].innerHTML = '<img src="china.png">';
+            kuni[1].innerHTML = '<img src="indo.png">';
+            kuni[2].innerHTML = '<img src="amerika">';
+            kuni[3].innerHTML = '<img src="indonesia">';
+        }
     </script>
 </body>
 </html>
