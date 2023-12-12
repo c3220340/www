@@ -12,5 +12,23 @@
     <p>※この方程式の解は3個あり、全て1以上の整数です。</p>
     <button onclick="show()">結果をみる</button>
     <div id="message" class="big_font"></div>
+
+    <script>
+        function show(){
+            let anser = [];
+            let count = 0;
+            let k = 0;
+            let x = 0;
+            while(count<3){
+                x++;
+                k = x*x*x-53*x*x+620*x-1036
+                if (k==0){
+                    anser[count]=x;
+                    count=count+1;
+                }
+            }
+            document.getElementById('message').textContent = anser[0]+'、'+anser[1]+'、'+anser[2]+'が解です。'
+        }
+    </script>
 </body>
 </html>
