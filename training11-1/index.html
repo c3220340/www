@@ -14,21 +14,21 @@
     <div id="message" class="big_font"></div>
 
     <script>
-        let anser = [2,14,37];
-        let count = 0;
-
-        function show() {
-            for (let x = 1; ; x++) {
-                let result = Math.pow(x,3) - 53 * Math.pow(x,2) + 36;
-                if (result === 0) {
-                    anser.push(x);
-                    count++;
-                    if (count === 3) {
-                        break;
-                    }
+        function show(){
+            let anser = [];
+            let count = 0;
+            let k = 0;
+            for(let x = 1; x<=999; x++){
+                k = x*x*x-53*x*x+620*x-1036
+                if (k==0){
+                    anser[count]=x;
+                    count=count+1;
+                }
+                if(count==3){
+                    break;
                 }
             }
-        document.getElementById("message").innerHTML = "解:" + anser.join(", ");
+            document.getElementById('message').textContent = anser[0]+'、'+anser[1]+'、'+anser[2]+'が解です。'
         }
     </script>
 </body>
