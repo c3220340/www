@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関数の戻り値</title>
+    <style>
+        #message{
+            width: 250px;
+            margin: 15px;
+            background-color: #FFCC99;
+        }
+    </style>
+</head>
+<body>
+    <h1>1〜10で割吏切れる数字</h1>
+    <p>割り切れる最小の数値をJavaScriptで求めます。</p>
+    <button onclick="show()">結果を見る</button>
+    <div id="message">ここに結果が表示されます。</div>
+
+    <script>
+        function show(){
+            let num = 0;
+            for(let i=10;  i<=10000; i++){
+                let flag = count(i);
+                if(flag){
+                    num=i;
+                    break;
+                }
+            }
+            document.getElementById('message').textContent = '答えは'+num+'です。'
+        }
+        function count(i){
+            for(let j=1; j<= 10; j++){
+                if(i%j != 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
