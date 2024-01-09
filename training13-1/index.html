@@ -25,22 +25,28 @@
             let text = '';
             let min = parseInt(prompt('範囲の最小値を1~10で入力してください'));
             let max = parseInt(prompt('範囲の最大値を1~10で入力してください'));
-            if(min > 10 || max > 10 || min%11 !=0 || max%11 !=0 || min < max) {
+            if(min<1 || max<1 || min%1 !=0 || max%1 !=0 || min>max) {
                 alert('1~10の半角の整数で範囲をしてしてください。');
                 return;
             }
-            for(let i = min; i <= max; i++) {
-                let flag = check(i);
-                if (flag) {
-                    text = text + i + '、';
+            for(let i=1; i<=1000000; i++){
+                let flag=check(i);
+                if(flag){
+                    num = i;
+                    break;
                 }
             }
-            document.getElementById('message').textContent = text;
-        }
+            document.getElementById('message').textContent = min + '~' + max +'で割り切れる最小の数値は' + num + 'です。'
 
-        function check(num) {
-            
+     function check(i){
+        for(let j=min; j<=max; j++){
+            if(i%j != 0){
+                return false;
+            }
         }
+        return true;
+     }
+}
     </script>
 </body>
 </html>
