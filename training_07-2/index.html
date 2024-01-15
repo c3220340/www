@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function ask(question,yes, no) {
+            if (confirm(question)) yes()
+            else no()
+        }
+
+        ask(
+            "次の操作を始めてもいい？",
+            yes() { alert("移動する！") },
+            yes() { alert("このページに留まる") }
+        )
+    </script>
 </body>
 </html>
