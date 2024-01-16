@@ -8,6 +8,7 @@
 <body>
    <p>「おはようございます」と言えるのは何時まで？</p>
    <button onclick="greetings()">結果を見る</button>
+   <div id="message">ここに結果が表示されます。</div>
 
    <script>
     function greetings() {
@@ -16,6 +17,7 @@
         if (hour >= 5 && hour <9) return "おはようございます"
         else if (hour >= 18) return "こんにちは"
         else return "こんばんは" //
+        document.getElementById('message').textContent = "今の時間の挨拶は、" + greetings() + "です。"
     }
    </script>
 </body>
