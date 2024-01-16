@@ -15,7 +15,7 @@
         const today = new Date()
         const hour = today.getHours()
         if (hour >= 5 && hour <9) return "おはようございます"
-        else if (hour >= 18) return "こんにちは"
+        else if (hour <= 18) return "こんにちは"
         else return "こんばんは" 
     }
     document.getElementById('message').textContent = "今の時間の挨拶は、" + greetings() + "です。"
