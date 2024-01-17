@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズ</title>
+</head>
+<body>
+    <h2 id="_question">ここに問題が表示されます。</h2>
+
+    <ul>
+        <li id="_ans1">回答1</li>
+        <li id="_ans2">回答2</li>
+        <li id="_ans3">回答3</li>
+    </ul>
+    <button type="button" id="_anser_1" onclick="Anser_Check(1)">回答1</button>
+    <button type="button" id="_anser_2" onclick="Anser_Check(2)">回答2</button>
+    <button type="button" id="_anser_3" onclick="Anser_Check(3)">回答3</button>
+
+    <script>
+    let Question = [
+        ["県名と県庁所在地が同じじゃないものはどれか？",
+        "1. 岐阜県",
+        "2. 長野県",
+        "3. 愛知県",
+        "3"],
+        ["栃木県の県庁所在地はどれ？",
+        "1. 前橋市",
+        "2. 水戸市",
+        "3. 宇都宮市",
+        "3"],
+        ["香川県の県庁所在地はどれ？",
+        "1. 松江市",
+        "2. 高松市",
+        "3. 松山市",
+        "2"]
+    ];
+
+    let Q = document.getElementById('_question');
+    let A1 = document.getElementById('_ans1');
+    let A2 = document.getElementById('_ans2');
+    let A3 = document.getElementById('_ans3');
+    let Correct = 0;
+    let Qcnt = 0;
+
+    function Q_Set() {
+        Q.textContent = Question[Qcnt][0];
+        A1.textContent = Question[Qcnt][1];
+        A2.textContent = Question[Qcnt][2];
+        A3.textContent = Question[Qcnt][3];
+    };
+
+    Q_Set();
+    function Anser_Check(ans) {
+        if(ans == Question[Qcnt][4]) {
+            alert("正解");
+            Correct ++;
+        }
+        else {
+            alert("不正解");
+        }
+        Qcnt ++;
+        if (Qcnt == Question.length) {
+            Q.textContent = "問題は以上です。正解数は" + Correct + "でした。";
+            A1.textContent = "";
+            A2.textContent = "";
+            A3.textContent = "";
+        }
+        else {
+            Q_Set();
+        }
+    }
+    </script>
+</body>
+</html>
